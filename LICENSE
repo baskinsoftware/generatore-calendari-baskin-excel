@@ -23,7 +23,7 @@ SOFTWARE.
 ---------------------------------------------------------------------------
 Ambito / Scope
 
-- Codice (Generatore_Campionato_Baskin.html, script e workflow in .github):
+- Codice (Generatore_Calendari_Baskin_Excel.html, script e workflow in .github):
   licenza MIT, testo qui sopra.
 - Modelli Excel (Campionato_Baskin_*.xlsx) e testi (README.md, TODO.md):
   Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0), vedi
@@ -33,5 +33,5 @@ Ambito / Scope
 
 In entrambi i casi si puo' usare, copiare, modificare e ridistribuire tutto,
 anche a scopo commerciale, a condizione di citare l'autore:
-  Generatore Campionato Baskin - Daniele Lolli (UncleDan)
+  Generatore Calendari Baskin Excel - Daniele Lolli (UncleDan)
   https://github.com/baskin-software/generatore-calendari-baskin-excel

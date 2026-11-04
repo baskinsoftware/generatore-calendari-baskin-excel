@@ -1,7 +1,7 @@
-# pages.yml by Daniele Lolli (UncleDan) feat. Claude AI - Release 1.3 - 2026-10-19 13-10-25
+# pages.yml by Daniele Lolli (UncleDan) feat. Claude AI - Release 1.4 - 2026-11-04 10-27-40
 # Pubblica su GitHub Pages solo il generatore HTML:
-#   - ramo main (o master) -> https://<utente>.github.io/<repo>/
-#   - ramo beta            -> https://<utente>.github.io/<repo>/beta/
+#   - ramo master (predefinito) -> https://baskin-software.github.io/generatore-calendari-baskin-excel/
+#   - ramo beta                 -> https://baskin-software.github.io/generatore-calendari-baskin-excel/beta/
 # Se il ramo principale non esiste si pubblica solo beta (vedi build_site.sh).
 # GitHub Pages accetta pubblicazioni solo dal ramo predefinito: un push su un
 # altro ramo (es. beta) rilancia questa stessa azione sul ramo predefinito, che
@@ -11,9 +11,9 @@ name: Pubblica generatore su GitHub Pages
 
 on:
   push:
-    branches: [main, master, beta]
+    branches: [master, main, beta]
     paths:
-      - 'Generatore_Campionato_Baskin.html'
+      - 'Generatore_Calendari_Baskin_Excel.html'
       - '.github/workflows/pages.yml'
       - '.github/workflows/build_site.sh'
   workflow_dispatch:
