@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# build_site.sh by Daniele Lolli (UncleDan) feat. Claude AI - Release 1.1 - 2026-11-04 10-27-40
+# build_site.sh by Daniele Lolli (UncleDan) <uncledan74@gmail.com> feat. Claude by Anthropic - Release 1.1.1 - 2026-11-20 18-32-16
 # Prepara la cartella _site per GitHub Pages con il solo generatore HTML:
 #   ramo master (predefinito; se manca, main) -> radice del sito
 #   ramo beta                       -> sottocartella beta/
