@@ -1,6 +1,6 @@
 # Generatore Calendari Baskin Excel
 
-> 📘 **Istruzioni per l'uso del file Excel** (passo passo, con cosa fare e cosa non fare): [ISTRUZIONI.md su GitHub](https://github.com/baskin-software/generatore-calendari-baskin-excel/blob/master/ISTRUZIONI.md). Lo stesso link è nel foglio `Campionato` dei file prodotti dal generatore, accanto ai parametri (cella `F1`).
+> 📘 **Istruzioni per l'uso del file Excel** (passo passo, con cosa fare e cosa non fare): [ISTRUZIONI.md su GitHub](https://github.com/baskinsoftware/generatore-calendari-baskin-excel/blob/master/ISTRUZIONI.md). Lo stesso link è nel foglio `Campionato` dei file prodotti dal generatore, accanto ai parametri (cella `F1`).
 
 Lavoro ispirato da *Europei di Calcio 2016 con Excel* di Alexsandra "Euro_2016.rar" ([http://www.wintricks.it/forum/showthread.php?t=165174](http://www.wintricks.it/forum/showthread.php?t=165174))
 
@@ -257,7 +257,7 @@ Il progetto è aperto: si può usare, copiare, modificare e ridistribuire, anche
 
 * **Codice** (`Generatore_Calendari_Baskin_Excel.html`, script e workflow): licenza [MIT](LICENSE).
 * **Modelli Excel e testi** (`Campionato_Baskin_*.xlsx`, `README.md`, `TODO.md`): licenza [Creative Commons Attribuzione 4.0 (CC BY 4.0)](LICENSE-CC-BY-4.0.md).
-* Citazione suggerita: *Basato su "Generatore Calendari Baskin Excel" di Daniele Lolli (UncleDan), https://github.com/baskin-software/generatore-calendari-baskin-excel* (vedi anche [`CITATION.cff`](CITATION.cff)).
+* Citazione suggerita: *Basato su "Generatore Calendari Baskin Excel" di Daniele Lolli (UncleDan), https://github.com/baskinsoftware/generatore-calendari-baskin-excel* (vedi anche [`CITATION.cff`](CITATION.cff)).
 * I file prodotti con i propri dati appartengono a chi li crea; la riga di citazione nel foglio `MEMO` è gradita ma si può togliere.
 
 ## Marchi e loghi
@@ -273,4 +273,4 @@ Adattamento al **Basket**/**Baskin** di:
 
 Per segnalazioni o richieste di implementazione (tempo permettendo):
 
-[https://github.com/baskin-software/generatore-calendari-baskin-excel/issues](https://github.com/baskin-software/generatore-calendari-baskin-excel/issues)
+[https://github.com/baskinsoftware/generatore-calendari-baskin-excel/issues](https://github.com/baskinsoftware/generatore-calendari-baskin-excel/issues)
