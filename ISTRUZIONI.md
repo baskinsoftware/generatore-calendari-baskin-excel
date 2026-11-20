@@ -1,6 +1,6 @@
 # Istruzioni per l'uso del file Excel del campionato
 
-Queste istruzioni valgono per il file `.xlsx` prodotto dal **Generatore Campionato Baskin**. Spiegano passo passo cosa compilare, dove e in che ordine, e soprattutto **cosa non fare** perché calendari, classifiche e riepiloghi continuino a funzionare.
+Queste istruzioni valgono per il file `.xlsx` prodotto dal **Generatore Calendari Baskin Excel**. Spiegano passo passo cosa compilare, dove e in che ordine, e soprattutto **cosa non fare** perché calendari, classifiche e riepiloghi continuino a funzionare.
 
 > In breve: si scrive solo nelle celle "bianche" previste (squadre, campi, codici squadra, date, campi di gioco, risultati, designazioni, note). Tutto il resto si calcola da solo. Le colonne nascoste e i fogli nascosti non si toccano. Per cambiare la **struttura** del campionato (gironi, numero di squadre, playoff) si rigenera il file con il generatore, che conserva i dati già inseriti.
 
