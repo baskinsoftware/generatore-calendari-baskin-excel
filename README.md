@@ -18,6 +18,18 @@ Il repository contiene **cinque versioni** dello stesso modello, ognuna in due f
 
 In tutte le versioni il calendario è di sola andata, generato con il metodo del girone all'italiana (Berger), e le gare sono numerate in sequenza continua: prima quelle di girone, poi quelle di playoff. Usando meno squadre di quelle previste basta lasciare vuote le righe non utilizzate: classifiche e calendari si adeguano da soli.
 
+## Numerazione delle versioni
+
+Dalla 26.3.2 si segue la regola di versioning dei progetti Baskin: `AA.M[.P]`, con AA = anno a due cifre, M = numero progressivo di release nell'anno (parte da 0, non è il mese) e P = patch. I pre-release hanno il suffisso `aN` (alpha), `bN` (beta) o `RCN`; il tag è `vAA.M[.P]`. I vecchi tag e le vecchie release non sono stati rinominati:
+
+| Tag storico | Data | Versione secondo la regola |
+|---|---|---|
+| `v2.0` | 2026-10-16 | 26.0 |
+| `gen-v1.34` | 2026-10-25 | 26.1 |
+| `gen-1.41` | 2026-10-28 | 26.2 |
+| `v3.0` | 2026-11-04 | 26.3 |
+| `v3.0.1` | 2026-11-20 | 26.3.1 |
+
 ## Generatore su misura
 
 Il generatore si può usare anche online: l'azione GitHub `.github/workflows/pages.yml` pubblica su GitHub Pages solo `Generatore_Calendari_Baskin_Excel.html`, a ogni modifica del file oppure a mano dalla scheda *Actions*: la versione del ramo principale (`main`, oppure `master` se `main` non c'è) all'indirizzo del sito, quella del ramo `beta` (se esiste) nella sottocartella `/beta/`, così si può provare una versione nuova senza toccare quella in uso. Se il ramo principale non esiste si pubblica solo `beta` e l'indirizzo del sito rimanda a `/beta/`. La preparazione del sito è nello script `.github/workflows/build_site.sh`. Per attivarla, una sola volta: *Settings* → *Pages* → *Build and deployment* → *Source*: **GitHub Actions**. GitHub Pages accetta pubblicazioni solo dal ramo predefinito: un push sul ramo `beta` rilancia quindi l'azione sul ramo predefinito, che ricostruisce il sito leggendo l'HTML da tutti i rami, senza modificare le regole di protezione dell'ambiente `github-pages`. Per questo i file in `.github/workflows` devono essere presenti, aggiornati, anche nel ramo predefinito.

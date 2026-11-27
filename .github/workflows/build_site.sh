@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# build_site.sh by Daniele Lolli (UncleDan) <uncledan74@gmail.com> feat. Claude by Anthropic - Release 1.1.1 - 2026-11-20 18-32-16
+# build_site.sh by Daniele Lolli (UncleDan) <uncledan74@gmail.com> feat. Claude by Anthropic - Release 26.3.2 - 2026-11-27 14-44-03
 # Prepara la cartella _site per GitHub Pages con il solo generatore HTML:
 #   ramo master (predefinito; se manca, main) -> radice del sito
 #   ramo beta                       -> sottocartella beta/
@@ -12,7 +12,7 @@ rm -rf "$OUT"; mkdir -p "$OUT"
 estrai() {  # estrai <ramo> <cartella>: copia l'HTML del ramo, se ramo e file esistono
   if git rev-parse --verify --quiet "origin/$1" >/dev/null && git cat-file -e "origin/$1:$F" 2>/dev/null; then
     mkdir -p "$2"; git show "origin/$1:$F" > "$2/index.html"; cp "$2/index.html" "$2/$F"
-    cp "$2/index.html" "$2/$OLD"   # vecchio nome (fino alla Release 1.41): i link salvati continuano a funzionare
+    cp "$2/index.html" "$2/$OLD"   # vecchio nome (fino alla v26.2, ex Release 1.41): i link salvati continuano a funzionare
     return 0
   fi
   return 1
