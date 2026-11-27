@@ -18,11 +18,23 @@ Il repository contiene **cinque versioni** dello stesso modello, ognuna in due f
 
 In tutte le versioni il calendario è di sola andata, generato con il metodo del girone all'italiana (Berger), e le gare sono numerate in sequenza continua: prima quelle di girone, poi quelle di playoff. Usando meno squadre di quelle previste basta lasciare vuote le righe non utilizzate: classifiche e calendari si adeguano da soli.
 
+## Numerazione delle versioni
+
+Dalla 26.3.2 si segue la regola di versioning dei progetti Baskin: `AA.M[.P]`, con AA = anno a due cifre, M = numero progressivo di release nell'anno (parte da 0, non è il mese) e P = patch. I pre-release hanno il suffisso `aN` (alpha), `bN` (beta) o `RCN`; il tag è `vAA.M[.P]`. I vecchi tag e le vecchie release non sono stati rinominati:
+
+| Tag storico | Data | Versione secondo la regola |
+|---|---|---|
+| `v2.0` | 2026-10-16 | 26.0 |
+| `gen-v1.34` | 2026-10-25 | 26.1 |
+| `gen-1.41` | 2026-10-28 | 26.2 |
+| `v3.0` | 2026-11-04 | 26.3 |
+| `v3.0.1` | 2026-11-20 | 26.3.1 |
+
 ## Generatore su misura
 
-Il generatore si può usare anche online: l'azione GitHub `.github/workflows/pages.yml` pubblica su GitHub Pages solo `Generatore_Calendari_Baskin_Excel.html`, a ogni modifica del file oppure a mano dalla scheda *Actions*: la versione del ramo principale (`main`, oppure `master` se `main` non c'è) all'indirizzo del sito, quella del ramo `beta` (se esiste) nella sottocartella `/beta/`, così si può provare una versione nuova senza toccare quella in uso. Se il ramo principale non esiste si pubblica solo `beta` e l'indirizzo del sito rimanda a `/beta/`. La preparazione del sito è nello script `.github/workflows/build_site.sh`. Per attivarla, una sola volta: *Settings* → *Pages* → *Build and deployment* → *Source*: **GitHub Actions**. GitHub Pages accetta pubblicazioni solo dal ramo predefinito: un push sul ramo `beta` rilancia quindi l'azione sul ramo predefinito, che ricostruisce il sito leggendo l'HTML da tutti i rami, senza modificare le regole di protezione dell'ambiente `github-pages`. Per questo i file in `.github/workflows` devono essere presenti, aggiornati, anche nel ramo predefinito.
+Il generatore si può usare anche online: l'azione GitHub `.github/workflows/pages.yml` pubblica su GitHub Pages solo il generatore, cioè la cartella `pwa/` (file `pwa/index.html`), a ogni modifica oppure a mano dalla scheda *Actions*: la versione del ramo principale (`master`, oppure `main` se `master` non c'è) all'indirizzo del sito `/`, quella del ramo `beta` (se esiste) nella sottocartella `/beta/`, così si può provare una versione nuova senza toccare quella in uso. L'indirizzo `/pwa/` rimanda a `/` se il ramo principale ha la cartella `pwa`, altrimenti a `/beta/`. Se il ramo principale non ha l'app si pubblica solo `beta` e l'indirizzo del sito rimanda a `/beta/`. Fino alla 26.3.1 l'HTML stava alla radice del repository con il nome `Generatore_Calendari_Baskin_Excel.html`: i vecchi indirizzi con quel nome (e con `Generatore_Campionato_Baskin.html`) restano raggiungibili. La preparazione del sito è nello script `.github/workflows/build_site.sh`. Per attivarla, una sola volta: *Settings* → *Pages* → *Build and deployment* → *Source*: **GitHub Actions**. GitHub Pages accetta pubblicazioni solo dal ramo predefinito: un push sul ramo `beta` rilancia quindi l'azione sul ramo predefinito, che ricostruisce il sito leggendo l'HTML da tutti i rami, senza modificare le regole di protezione dell'ambiente `github-pages`. Per questo i file in `.github/workflows` devono essere presenti, aggiornati, anche nel ramo predefinito.
 
-`Generatore_Calendari_Baskin_Excel.html` è una pagina unica che crea il file MODELLO con le dimensioni volute. Si apre con un doppio clic in qualsiasi browser recente (Chrome, Edge, Firefox, Safari), funziona anche offline e nessun dato lascia il computer.
+`pwa/index.html` è una pagina unica che crea il file MODELLO con le dimensioni volute. Si apre con un doppio clic in qualsiasi browser recente (Chrome, Edge, Firefox, Safari), funziona anche offline e nessun dato lascia il computer.
 
 * **Gironi**: un girone per riga nel formato `nome, squadre, colore, sigla` (separatore virgola, punto e virgola o tabulazione). Il nome è quello per la stampa (cella `D11`). La sigla, da 1 a 3 lettere (per esempio `O`, `E`, `ORO`), identifica il girone nei codici squadra (`ORO01`), nelle classifiche (`ORO1`), nelle barre dei calendari e nel playoff; se manca vale A, B, C… secondo la posizione, fino a 26 gironi. Ogni girone può avere un numero diverso di squadre, da 3 a 40: con un numero dispari in ogni giornata una squadra riposa. Il colore può essere un nome HTML (`green`, `red`, `navy`, `teal`…), un codice `#RRGGBB`, oppure `gold`, `silver`, `bronze`, `platinum`, e si può lasciare vuoto (`Ovest, 8, , O`); dal colore vengono ricavate la tinta scura (barre e linguette) e quella chiara (righe).
 * **Andata e ritorno** (casella, non spuntata di default): ogni girone generato ha anche il girone di ritorno, con lo stesso numero di giornate; nel `RIEPILOGO` le gare sono in ordine, prima l'andata poi il ritorno. Per i gironi con le giornate copiate da un file importato vale il file.
@@ -255,7 +267,7 @@ L'elenco delle cose da correggere a mano nei file delle stagioni passate e delle
 
 Il progetto è aperto: si può usare, copiare, modificare e ridistribuire, anche a scopo commerciale, **a condizione di citare l'autore**.
 
-* **Codice** (`Generatore_Calendari_Baskin_Excel.html`, script e workflow): licenza [MIT](LICENSE).
+* **Codice** (`pwa/index.html`, script e workflow): licenza [MIT](LICENSE).
 * **Modelli Excel e testi** (`Campionato_Baskin_*.xlsx`, `README.md`, `TODO.md`): licenza [Creative Commons Attribuzione 4.0 (CC BY 4.0)](LICENSE-CC-BY-4.0.md).
 * Citazione suggerita: *Basato su "Generatore Calendari Baskin Excel" di Daniele Lolli (UncleDan), https://github.com/baskinsoftware/generatore-calendari-baskin-excel* (vedi anche [`CITATION.cff`](CITATION.cff)).
 * I file prodotti con i propri dati appartengono a chi li crea; la riga di citazione nel foglio `MEMO` è gradita ma si può togliere.
