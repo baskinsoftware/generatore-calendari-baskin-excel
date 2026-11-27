@@ -1,8 +1,9 @@
 # pages.yml by Daniele Lolli (UncleDan) <uncledan74@gmail.com> feat. Claude by Anthropic - Release 26.3.2 - 2026-11-27 14-44-03
-# Pubblica su GitHub Pages solo il generatore HTML:
-#   - ramo master (predefinito) -> https://baskinsoftware.github.io/generatore-calendari-baskin-excel/
-#   - ramo beta                 -> https://baskinsoftware.github.io/generatore-calendari-baskin-excel/beta/
-# Se il ramo principale non esiste si pubblica solo beta (vedi build_site.sh).
+# Pubblica su GitHub Pages solo il generatore HTML (cartella pwa/), come negli altri progetti Baskin:
+#   - cartella pwa/ del ramo master (predefinito) -> https://baskinsoftware.github.io/generatore-calendari-baskin-excel/
+#   - cartella pwa/ del ramo beta                 -> https://baskinsoftware.github.io/generatore-calendari-baskin-excel/beta/
+#   - /pwa/ reindirizza a / (o a /beta/ se il ramo principale non ha l'app)
+# Se il ramo principale non ha l'app si pubblica solo beta (vedi build_site.sh).
 # GitHub Pages accetta pubblicazioni solo dal ramo predefinito: un push su un
 # altro ramo (es. beta) rilancia questa stessa azione sul ramo predefinito, che
 # ricostruisce il sito leggendo l'HTML da tutti i rami. Cosi' non serve
@@ -13,7 +14,8 @@ on:
   push:
     branches: [master, main, beta]
     paths:
-      - 'Generatore_Calendari_Baskin_Excel.html'
+      - 'pwa/**'
+      - 'Generatore_Calendari_Baskin_Excel.html'   # posizione precedente (fino alla v26.3.1)
       - '.github/workflows/pages.yml'
       - '.github/workflows/build_site.sh'
   workflow_dispatch:
